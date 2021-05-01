@@ -23,7 +23,8 @@ def index():
         db.session.add(new_post)
         db.session.commit()
         return f"{name} {text}"
-    return render_template("index.html")
+    posts = Posts.query.order_by(Posts.id.desc())
+    return render_template("index.html", posts=posts[0:30])
 
 if __name__ == "__main__":
-    app.run(debug=True,host="0.0.0.0")
+    app.run(debug=False,host="0.0.0.0")

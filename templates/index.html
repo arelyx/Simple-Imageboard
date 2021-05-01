@@ -59,11 +59,13 @@
                     <th>Text</th>
                     <th>Date</th>
                 </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Text</td>
-                    <td>Date</td>
-                </tr>
+                {% for post in posts %}
+                    <tr>
+                        <td>{{post.name}}</td>
+                        <td>{{post.text}}</td>
+                        <td>{{post.date}}</td>
+                    </tr>
+                {% endfor %}
             </table>
         </div>
     </body>
