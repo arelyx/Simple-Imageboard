@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -13,14 +13,17 @@ class Posts(db.Model):
     text = db.Column(db.Text)
     date = db.Column(db.DateTime, default=datetime.now)
 
-db = SQLAlchemy(app)
 
-
-@app.route("/")
+@app.route("/",methods=["GET","POST"])
 def index():
     if request.method == "POST":
-        return "Hello world Post"
-    return "Hello world Get"
+        name = request.form.get("name")
+        text = request.form.get("text")
+        new_post = Posts(name=name,text=text)
+        db.session.add(new_post)
+        db.session.commit()
+        return f"{name} {text}"
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True,host="0.0.0.0")

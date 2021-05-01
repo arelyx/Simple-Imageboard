@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>SimpleBoard</title>
+        <style>
+            table{
+                margin:0px auto;
+                border-collapse: collapse;
+                width:100%;
+                text-align:left;
+            }
+
+            input{
+                width:100%;
+                height:100%;
+            }
+
+            button{
+                width:100%;
+                height:100%;
+            }
+
+            table, th, td{
+                border: 1px solid black;
+                padding:10px;
+            }
+
+            table tr th:nth-child(1){
+                width:20%;
+            }
+
+            table tr th:nth-child(2){
+                width:60%;
+            }
+
+            table tr th:nth-child(3){
+                width:60%;
+            }
+
+            #content{
+                margin:0px auto;    
+                width:45em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id=content>
+            <h1>Simple Board</h1>
+            <table>
+                <tr>
+                    <form method="POST">
+                        <td><input name="name"></td>
+                        <td><input name="text"></td>
+                        <td><button>Submit</button></td>
+                    </form>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Text</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Text</td>
+                    <td>Date</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
