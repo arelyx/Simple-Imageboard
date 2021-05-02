@@ -25,15 +25,15 @@
             }
 
             table tr th:nth-child(1){
-                width:20%;
+                width:30%;
             }
 
             table tr th:nth-child(2){
-                width:60%;
+                width:50%;
             }
 
             table tr th:nth-child(3){
-                width:60%;
+                width:20%;
             }
 
             #content{
@@ -48,8 +48,8 @@
             <h1>Simple Board</h1>
             <table>
                 <tr>
-                    <form method="POST">
-                        <td><input name="name"></td>
+                    <form method="POST" enctype="multipart/form-data">
+                        <td><input type=file name="img"></td>
                         <td><input name="text"></td>
                         <td><button>Submit</button></td>
                     </form>
@@ -61,7 +61,7 @@
                 </tr>
                 {% for post in posts %}
                     <tr>
-                        <td>{{post.name}}</td>
+                        <td>{{post.filename}}</td>
                         <td>{{post.text}}</td>
                         <td>{{post.date}}</td>
                     </tr>
