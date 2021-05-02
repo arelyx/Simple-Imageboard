@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>SimpleBoard</title>
+        <title>Simple Imageboard</title>
         <style>
             table{
                 margin:0px auto;
@@ -38,14 +38,14 @@
 
             #content{
                 margin:0px auto;    
-                width:45em;
+                max-width:45em;
             }
 
         </style>
     </head>
     <body>
         <div id=content>
-            <h1>Simple Board</h1>
+            <h1>Simple Imageboard</h1>
             <table>
                 <tr>
                     <form method="POST" enctype="multipart/form-data">
@@ -55,13 +55,17 @@
                     </form>
                 </tr>
                 <tr>
-                    <th>Name</th>
+                    <th>Image</th>
                     <th>Text</th>
                     <th>Date</th>
                 </tr>
                 {% for post in posts %}
                     <tr>
-                        <td>{{post.filename}}</td>
+                        <td>
+                            {% if post.mimetype %}
+                            <img width=100% src=/img/{{post.id}}>
+                            {% endif %}
+                        </td>
                         <td>{{post.text}}</td>
                         <td>{{post.date}}</td>
                     </tr>
