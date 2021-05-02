@@ -11,3 +11,5 @@ Download: `git clone https://github.com/KinoZampie/Simple-Imageboard/`
 Install Dependencies: `pip3 install -r requirements.txt`
 
 Run it! `python3 app.py`
+
+![screenshot](/screenshot.png)
